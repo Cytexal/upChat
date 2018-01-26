@@ -112,7 +112,7 @@ namespace Datenbank
                 }
             }
         }
-
+        //Ja Moin 
         private void Button_Apply_Click(object sender, EventArgs e)
         {
             if(TextBox_Name.Text == "")
