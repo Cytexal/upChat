@@ -84,7 +84,7 @@ namespace RegistrierungForm
                 email_false.Show();
             }
 
-            // Check Password
+            // Check Password loooool
             if (textBoxPasswort.Text.Length >= 5)
                 PWlongEnough ^= true;
 
