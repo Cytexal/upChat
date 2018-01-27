@@ -12,9 +12,17 @@ namespace Datenbank
 {
     public partial class Chats : Form
     {
+        List<string> ListChats = new List<string>();
         public Chats()
         {
             InitializeComponent();
+            // Get values into ListChats
+            foreach (string s in ListChats)
+            {
+                Panel P = new Panel();
+                P.Size = new Size(100,20);
+
+            }
         }
     }
 }

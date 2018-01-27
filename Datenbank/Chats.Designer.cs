@@ -32,6 +32,8 @@
             this.metroTabPage_Chats = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage_Kontakte = new MetroFramework.Controls.MetroTabPage();
             this.monoFlat_Panel1 = new MonoFlat.Class1.MonoFlat_Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -41,8 +43,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.metroTabControl1.SuspendLayout();
             this.monoFlat_Panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -123,12 +124,34 @@
             this.monoFlat_Panel1.Controls.Add(this.label2);
             this.monoFlat_Panel1.Controls.Add(this.label1);
             this.monoFlat_Panel1.Controls.Add(this.flowLayoutPanel1);
-            this.monoFlat_Panel1.Location = new System.Drawing.Point(6, 39);
+            this.monoFlat_Panel1.Location = new System.Drawing.Point(83, 81);
             this.monoFlat_Panel1.Name = "monoFlat_Panel1";
             this.monoFlat_Panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.monoFlat_Panel1.Size = new System.Drawing.Size(206, 673);
+            this.monoFlat_Panel1.Size = new System.Drawing.Size(206, 616);
             this.monoFlat_Panel1.TabIndex = 1;
             this.monoFlat_Panel1.Text = "monoFlat_Panel1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label2.Location = new System.Drawing.Point(61, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 17);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Zuletzt Online: 14:03";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(61, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Olaf";
             // 
             // flowLayoutPanel1
             // 
@@ -219,27 +242,13 @@
             this.pictureBox8.TabIndex = 7;
             this.pictureBox8.TabStop = false;
             // 
-            // label1
+            // flowLayoutPanel2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(61, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Olaf";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Location = new System.Drawing.Point(61, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Zuletzt Online: 14:03";
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(51)))), ((int)(((byte)(63)))));
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(295, 81);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 616);
+            this.flowLayoutPanel2.TabIndex = 2;
             // 
             // Chats
             // 
@@ -247,6 +256,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1054, 709);
+            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.monoFlat_Panel1);
             this.Controls.Add(this.metroTabControl1);
             this.Name = "Chats";
@@ -284,5 +294,6 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }
