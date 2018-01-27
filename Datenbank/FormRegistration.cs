@@ -84,7 +84,7 @@ namespace RegistrierungForm // Hi
                 email_false.Show();
             }
 
-            // Check Password loooool
+            // Check Password
             if (textBoxPasswort.Text.Length >= 5)
                 PWlongEnough ^= true;
 
@@ -102,7 +102,7 @@ namespace RegistrierungForm // Hi
             Application.OpenForms[0].Show();
         }
 
-        private void monoFlat_Label1_Click(object sender, EventArgs e)
+        private void LabelLogin_Click(object sender, EventArgs e)
         {
             this.Close();
         }

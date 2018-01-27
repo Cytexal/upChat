@@ -72,6 +72,7 @@
     <Compile Include="FormRegistration.Designer.cs">
       <DependentUpon>FormRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Get.cs" />
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>

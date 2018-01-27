@@ -37,11 +37,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TextBox_Name = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Label_Name = new MonoFlat.Class1.MonoFlat_Label();
-            this.Button_Apply = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.LabelApply = new Bunifu.Framework.UI.BunifuFlatButton();
             this.ProfileImage = new System.Windows.Forms.OpenFileDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.monoFlat_Label1 = new MonoFlat.Class1.MonoFlat_Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBoxProfilePic = new System.Windows.Forms.PictureBox();
+            this.LabelRegistration = new MonoFlat.Class1.MonoFlat_Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
             // UpChat
@@ -201,72 +201,71 @@
             this.Label_Name.TabIndex = 11;
             this.Label_Name.Text = "Anzeigename:";
             // 
-            // Button_Apply
+            // LabelApply
             // 
-            this.Button_Apply.Activecolor = System.Drawing.Color.CadetBlue;
-            this.Button_Apply.BackColor = System.Drawing.Color.LightCyan;
-            this.Button_Apply.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Button_Apply.BorderRadius = 0;
-            this.Button_Apply.ButtonText = "Bestätigen";
-            this.Button_Apply.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_Apply.DisabledColor = System.Drawing.Color.Gray;
-            this.Button_Apply.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Button_Apply.Iconcolor = System.Drawing.Color.Transparent;
-            this.Button_Apply.Iconimage = null;
-            this.Button_Apply.Iconimage_right = null;
-            this.Button_Apply.Iconimage_right_Selected = null;
-            this.Button_Apply.Iconimage_Selected = null;
-            this.Button_Apply.IconMarginLeft = 0;
-            this.Button_Apply.IconMarginRight = 0;
-            this.Button_Apply.IconRightVisible = true;
-            this.Button_Apply.IconRightZoom = 0D;
-            this.Button_Apply.IconVisible = true;
-            this.Button_Apply.IconZoom = 90D;
-            this.Button_Apply.IsTab = false;
-            this.Button_Apply.Location = new System.Drawing.Point(745, 459);
-            this.Button_Apply.Name = "Button_Apply";
-            this.Button_Apply.Normalcolor = System.Drawing.Color.LightCyan;
-            this.Button_Apply.OnHovercolor = System.Drawing.Color.CadetBlue;
-            this.Button_Apply.OnHoverTextColor = System.Drawing.Color.White;
-            this.Button_Apply.selected = false;
-            this.Button_Apply.Size = new System.Drawing.Size(241, 48);
-            this.Button_Apply.TabIndex = 13;
-            this.Button_Apply.Text = "Bestätigen";
-            this.Button_Apply.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Button_Apply.Textcolor = System.Drawing.Color.Gray;
-            this.Button_Apply.TextFont = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Apply.Click += new System.EventHandler(this.Button_Apply_Click);
+            this.LabelApply.Activecolor = System.Drawing.Color.CadetBlue;
+            this.LabelApply.BackColor = System.Drawing.Color.LightCyan;
+            this.LabelApply.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LabelApply.BorderRadius = 0;
+            this.LabelApply.ButtonText = "Bestätigen";
+            this.LabelApply.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LabelApply.DisabledColor = System.Drawing.Color.Gray;
+            this.LabelApply.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LabelApply.Iconcolor = System.Drawing.Color.Transparent;
+            this.LabelApply.Iconimage = null;
+            this.LabelApply.Iconimage_right = null;
+            this.LabelApply.Iconimage_right_Selected = null;
+            this.LabelApply.Iconimage_Selected = null;
+            this.LabelApply.IconMarginLeft = 0;
+            this.LabelApply.IconMarginRight = 0;
+            this.LabelApply.IconRightVisible = true;
+            this.LabelApply.IconRightZoom = 0D;
+            this.LabelApply.IconVisible = true;
+            this.LabelApply.IconZoom = 90D;
+            this.LabelApply.IsTab = false;
+            this.LabelApply.Location = new System.Drawing.Point(745, 459);
+            this.LabelApply.Name = "LabelApply";
+            this.LabelApply.Normalcolor = System.Drawing.Color.LightCyan;
+            this.LabelApply.OnHovercolor = System.Drawing.Color.CadetBlue;
+            this.LabelApply.OnHoverTextColor = System.Drawing.Color.White;
+            this.LabelApply.selected = false;
+            this.LabelApply.Size = new System.Drawing.Size(241, 48);
+            this.LabelApply.TabIndex = 13;
+            this.LabelApply.Text = "Bestätigen";
+            this.LabelApply.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabelApply.Textcolor = System.Drawing.Color.Gray;
+            this.LabelApply.TextFont = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelApply.Click += new System.EventHandler(this.Button_Apply_Click);
             // 
             // ProfileImage
             // 
             this.ProfileImage.FileName = "openFileDialog1";
             this.ProfileImage.Filter = "Bilder(*.png & *.jpg) |*.png;*.jpg;";
-            this.ProfileImage.FileOk += new System.ComponentModel.CancelEventHandler(this.ProfileImage_FileOk);
             // 
-            // pictureBox1
+            // pictureBoxProfilePic
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.pictureBox1.Image = global::Datenbank.Properties.Resources.Profilbild_Symbolbild_maennlich_Standard_blau_weiss_image_1200;
-            this.pictureBox1.Location = new System.Drawing.Point(797, 144);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 129);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.pictureBoxProfilePic.BackColor = System.Drawing.Color.Black;
+            this.pictureBoxProfilePic.Image = global::Datenbank.Properties.Resources.Profilbild_Symbolbild_maennlich_Standard_blau_weiss_image_1200;
+            this.pictureBoxProfilePic.Location = new System.Drawing.Point(815, 177);
+            this.pictureBoxProfilePic.Name = "pictureBoxProfilePic";
+            this.pictureBoxProfilePic.Size = new System.Drawing.Size(96, 96);
+            this.pictureBoxProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxProfilePic.TabIndex = 14;
+            this.pictureBoxProfilePic.TabStop = false;
+            this.pictureBoxProfilePic.Click += new System.EventHandler(this.pictureBoxProfilePic_Click);
             // 
-            // monoFlat_Label1
+            // LabelRegistration
             // 
-            this.monoFlat_Label1.AutoSize = true;
-            this.monoFlat_Label1.BackColor = System.Drawing.Color.Transparent;
-            this.monoFlat_Label1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.monoFlat_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(125)))), ((int)(((byte)(132)))));
-            this.monoFlat_Label1.Location = new System.Drawing.Point(321, 9);
-            this.monoFlat_Label1.Name = "monoFlat_Label1";
-            this.monoFlat_Label1.Size = new System.Drawing.Size(74, 15);
-            this.monoFlat_Label1.TabIndex = 15;
-            this.monoFlat_Label1.Text = "Registrieren?";
-            this.monoFlat_Label1.Click += new System.EventHandler(this.monoFlat_Label1_Click);
+            this.LabelRegistration.AutoSize = true;
+            this.LabelRegistration.BackColor = System.Drawing.Color.Transparent;
+            this.LabelRegistration.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelRegistration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(125)))), ((int)(((byte)(132)))));
+            this.LabelRegistration.Location = new System.Drawing.Point(321, 9);
+            this.LabelRegistration.Name = "LabelRegistration";
+            this.LabelRegistration.Size = new System.Drawing.Size(74, 15);
+            this.LabelRegistration.TabIndex = 15;
+            this.LabelRegistration.Text = "Registrieren?";
+            this.LabelRegistration.Click += new System.EventHandler(this.LabelRegistration_Click);
             // 
             // Start
             // 
@@ -274,10 +273,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Datenbank.Properties.Resources.thumb_1920_536245;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(407, 591);
-            this.Controls.Add(this.monoFlat_Label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.Button_Apply);
+            this.ClientSize = new System.Drawing.Size(403, 591);
+            this.Controls.Add(this.LabelRegistration);
+            this.Controls.Add(this.pictureBoxProfilePic);
+            this.Controls.Add(this.LabelApply);
             this.Controls.Add(this.Label_Name);
             this.Controls.Add(this.TextBox_Name);
             this.Controls.Add(this.label1);
@@ -291,8 +290,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Start";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Start_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,10 +307,10 @@
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TextBox_Name;
         private MonoFlat.Class1.MonoFlat_Label Label_Name;
-        private Bunifu.Framework.UI.BunifuFlatButton Button_Apply;
+        private Bunifu.Framework.UI.BunifuFlatButton LabelApply;
         private System.Windows.Forms.OpenFileDialog ProfileImage;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private MonoFlat.Class1.MonoFlat_Label monoFlat_Label1;
+        private System.Windows.Forms.PictureBox pictureBoxProfilePic;
+        private MonoFlat.Class1.MonoFlat_Label LabelRegistration;
     }
 }
 

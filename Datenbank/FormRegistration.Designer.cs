@@ -35,7 +35,7 @@
             this.textBoxPasswort = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Button_Anmeldung = new Bunifu.Framework.UI.BunifuFlatButton();
             this.email_false = new System.Windows.Forms.Label();
-            this.monoFlat_Label1 = new MonoFlat.Class1.MonoFlat_Label();
+            this.LabelLogin = new MonoFlat.Class1.MonoFlat_Label();
             this.SuspendLayout();
             // 
             // labelRegistration
@@ -163,18 +163,18 @@
             this.email_false.Text = "Ungültige Eingabe/n";
             this.email_false.Visible = false;
             // 
-            // monoFlat_Label1
+            // LabelLogin
             // 
-            this.monoFlat_Label1.AutoSize = true;
-            this.monoFlat_Label1.BackColor = System.Drawing.Color.Transparent;
-            this.monoFlat_Label1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.monoFlat_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(125)))), ((int)(((byte)(132)))));
-            this.monoFlat_Label1.Location = new System.Drawing.Point(328, 9);
-            this.monoFlat_Label1.Name = "monoFlat_Label1";
-            this.monoFlat_Label1.Size = new System.Drawing.Size(67, 15);
-            this.monoFlat_Label1.TabIndex = 11;
-            this.monoFlat_Label1.Text = "Anmelden?";
-            this.monoFlat_Label1.Click += new System.EventHandler(this.monoFlat_Label1_Click);
+            this.LabelLogin.AutoSize = true;
+            this.LabelLogin.BackColor = System.Drawing.Color.Transparent;
+            this.LabelLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(125)))), ((int)(((byte)(132)))));
+            this.LabelLogin.Location = new System.Drawing.Point(328, 9);
+            this.LabelLogin.Name = "LabelLogin";
+            this.LabelLogin.Size = new System.Drawing.Size(67, 15);
+            this.LabelLogin.TabIndex = 11;
+            this.LabelLogin.Text = "Anmelden?";
+            this.LabelLogin.Click += new System.EventHandler(this.LabelLogin_Click);
             // 
             // FormRegistration
             // 
@@ -182,7 +182,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Datenbank.Properties.Resources.thumb_1920_536245;
             this.ClientSize = new System.Drawing.Size(407, 591);
-            this.Controls.Add(this.monoFlat_Label1);
+            this.Controls.Add(this.LabelLogin);
             this.Controls.Add(this.email_false);
             this.Controls.Add(this.Button_Anmeldung);
             this.Controls.Add(this.textBoxPasswort);
@@ -206,7 +206,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxPasswort;
         private Bunifu.Framework.UI.BunifuFlatButton Button_Anmeldung;
         private System.Windows.Forms.Label email_false;
-        private MonoFlat.Class1.MonoFlat_Label monoFlat_Label1;
+        private MonoFlat.Class1.MonoFlat_Label LabelLogin;
     }
 }
 

@@ -43,7 +43,7 @@ namespace Datenbank
             MessageBox.Show(MySQLCommands.MySQLSelectCommmand(Connection, "select * from Anmeldeinformationen"));
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void Start_FormClosing(object sender, FormClosingEventArgs e)
         {
             Connection.Close();
         }
@@ -52,11 +52,6 @@ namespace Datenbank
         {
             Random rnd = new Random();
             MySQLCommands.MySQLInsertCommmand(Connection, "INSERT INTO Test (Test) Values('Hallo"+rnd.Next(100)+"')");
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Button_Anmeldung_Click(object sender, EventArgs e)
@@ -89,9 +84,9 @@ namespace Datenbank
                         TextBox_Passwort.Text = "";
                         TextBox_Mail.Text = "";
 
-                        pictureBox1.Image = ResizeImage(pictureBox1.Image, 96, 96);
-                        monoFlat_Label1.Hide();
-                        Transition t = new Transition(new TransitionType_EaseInEaseOut(6000));
+                        pictureBoxProfilePic.Image = Get.ResizedImage(pictureBoxProfilePic.Image);
+                        LabelRegistration.Hide();
+                        Transition t = new Transition(new TransitionType_EaseInEaseOut(2000));
                         t.add(TextBox_Mail, "Left", -500);
                         t.add(TextBox_Passwort, "Left", -500);
                         t.add(Label_Mail, "Left", -500);
@@ -102,17 +97,30 @@ namespace Datenbank
                         {
                             t.add(TextBox_Name, "Left", TextBox_Name.Location.X - 661);
                             t.add(Label_Name, "Left", Label_Name.Location.X - 661);
-                            t.add(pictureBox1, "Left", pictureBox1.Location.X - 661);
-                            t.add(Button_Apply, "Left", Button_Apply.Location.X - 661);
+                            t.add(pictureBoxProfilePic, "Left", pictureBoxProfilePic.Location.X - 661);
+                            t.add(LabelApply, "Left", LabelApply.Location.X - 661);
+                            MySQLCommands.MySQLInsertCommmand(Connection, "UPDATE `Anmeldeinformationen` SET `Letzter_Login`='" + System.DateTime.Now.ToShortTimeString() + "' WHERE `ID`='" + Variablen.ID + "'");
+
                         }
-                        MySQLCommands.MySQLInsertCommmand(Connection, "UPDATE `Anmeldeinformationen` SET `Letzter_Login`='"+System.DateTime.Now.ToShortTimeString()+"' WHERE `ID`='" + Variablen.ID + "'");
-                        
+                        else
+                        {
+                            MySQLCommands.MySQLInsertCommmand(Connection, "UPDATE `Anmeldeinformationen` SET `Letzter_Login`='" + System.DateTime.Now.ToShortTimeString() + "' WHERE `ID`='" + Variablen.ID + "'");
+
+                            GoToChats();
+                        }
                         t.run();
                     }
                 }
             }
         }
-        //Ja Moin 
+
+        private void GoToChats()
+        {
+            this.Hide();
+            Chats C = new Chats();
+            C.Show();
+        }
+
         private void Button_Apply_Click(object sender, EventArgs e)
         {
             if(TextBox_Name.Text == "")
@@ -120,50 +128,16 @@ namespace Datenbank
             else
             {
                 Label_Name.ForeColor = Color.White;
-                byte[] imagebytes = imageToByteArray(pictureBox1.Image);
+                byte[] imagebytes = imageToByteArray(pictureBoxProfilePic.Image);
                 String imagebyteString = "";
                 foreach (byte b in imagebytes)
                 {
                     imagebyteString += b.ToString();
                 }
                 MySQLCommands.MySQLInsertCommmand(Connection, "INSERT INTO `Profile`(`ID`, `Anzeigename`, `Status`,`Profilbild`) VALUES ('"+Variablen.ID+"','"+TextBox_Name.Text+"','Hallo ich benutzte UpChat','"+imagebyteString+"')");
-
             }
-
-
-
-
-
-
+            GoToChats();
         }
-
-
-        public static Bitmap ResizeImage(Image image, int width, int height)
-        {
-            var destRect = new Rectangle(0, 0, width, height);
-            var destImage = new Bitmap(width, height);
-
-            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
-
-            using (var graphics = Graphics.FromImage(destImage))
-            {
-                graphics.CompositingMode = CompositingMode.SourceCopy;
-                graphics.CompositingQuality = CompositingQuality.HighQuality;
-                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                graphics.SmoothingMode = SmoothingMode.HighQuality;
-                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-
-                using (var wrapMode = new ImageAttributes())
-                {
-                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
-                }
-            }
-
-            return destImage;
-        }
-
-
 
         public byte[] imageToByteArray(System.Drawing.Image imageIn)
         {
@@ -172,23 +146,16 @@ namespace Datenbank
             return ms.ToArray();
         }
 
-
-        private void ProfileImage_FileOk(object sender, CancelEventArgs e)
-        {
-            
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
+        private void pictureBoxProfilePic_Click(object sender, EventArgs e)
         {
             if (ProfileImage.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Image = ResizeImage(Image.FromFile(ProfileImage.FileName),96,96);
+                pictureBoxProfilePic.Image = Get.ResizedImage(Image.FromFile(ProfileImage.FileName));
             }
         }
 
-        private void monoFlat_Label1_Click(object sender, EventArgs e)
+        private void LabelRegistration_Click(object sender, EventArgs e)
         {
-            
             FormRegistration reg = new FormRegistration(this.Location);
             reg.Show();
             this.Hide();

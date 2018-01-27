@@ -48,7 +48,7 @@ namespace Datenbank
                 OpenConnection();
                 return row;
             }
-            catch(Exception e)
+            catch
             {
                 connection.Close();
                 OpenConnection();
