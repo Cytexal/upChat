@@ -44,6 +44,13 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.textBoxSender = new System.Windows.Forms.TextBox();
+            this.textBoxEmpfänger = new System.Windows.Forms.TextBox();
+            this.textBoxMessage = new System.Windows.Forms.TextBox();
+            this.buttonSend = new System.Windows.Forms.Button();
+            this.labelSender = new System.Windows.Forms.Label();
+            this.labelEmpfänger = new System.Windows.Forms.Label();
+            this.labelMessage = new System.Windows.Forms.Label();
             this.metroTabControl1.SuspendLayout();
             this.monoFlat_Panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -250,12 +257,77 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 616);
             this.flowLayoutPanel2.TabIndex = 2;
             // 
+            // textBoxSender
+            // 
+            this.textBoxSender.Location = new System.Drawing.Point(573, 235);
+            this.textBoxSender.Name = "textBoxSender";
+            this.textBoxSender.Size = new System.Drawing.Size(55, 20);
+            this.textBoxSender.TabIndex = 3;
+            // 
+            // textBoxEmpfänger
+            // 
+            this.textBoxEmpfänger.Location = new System.Drawing.Point(634, 235);
+            this.textBoxEmpfänger.Name = "textBoxEmpfänger";
+            this.textBoxEmpfänger.Size = new System.Drawing.Size(55, 20);
+            this.textBoxEmpfänger.TabIndex = 4;
+            // 
+            // textBoxMessage
+            // 
+            this.textBoxMessage.Location = new System.Drawing.Point(695, 235);
+            this.textBoxMessage.Name = "textBoxMessage";
+            this.textBoxMessage.Size = new System.Drawing.Size(347, 20);
+            this.textBoxMessage.TabIndex = 5;
+            // 
+            // buttonSend
+            // 
+            this.buttonSend.Location = new System.Drawing.Point(573, 261);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(116, 23);
+            this.buttonSend.TabIndex = 6;
+            this.buttonSend.Text = "Send";
+            this.buttonSend.UseVisualStyleBackColor = true;
+            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
+            // 
+            // labelSender
+            // 
+            this.labelSender.AutoSize = true;
+            this.labelSender.Location = new System.Drawing.Point(570, 219);
+            this.labelSender.Name = "labelSender";
+            this.labelSender.Size = new System.Drawing.Size(41, 13);
+            this.labelSender.TabIndex = 7;
+            this.labelSender.Text = "Sender";
+            // 
+            // labelEmpfänger
+            // 
+            this.labelEmpfänger.AutoSize = true;
+            this.labelEmpfänger.Location = new System.Drawing.Point(631, 219);
+            this.labelEmpfänger.Name = "labelEmpfänger";
+            this.labelEmpfänger.Size = new System.Drawing.Size(58, 13);
+            this.labelEmpfänger.TabIndex = 8;
+            this.labelEmpfänger.Text = "Empfänger";
+            // 
+            // labelMessage
+            // 
+            this.labelMessage.AutoSize = true;
+            this.labelMessage.Location = new System.Drawing.Point(692, 219);
+            this.labelMessage.Name = "labelMessage";
+            this.labelMessage.Size = new System.Drawing.Size(50, 13);
+            this.labelMessage.TabIndex = 9;
+            this.labelMessage.Text = "Message";
+            // 
             // Chats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1054, 709);
+            this.Controls.Add(this.labelMessage);
+            this.Controls.Add(this.labelEmpfänger);
+            this.Controls.Add(this.labelSender);
+            this.Controls.Add(this.buttonSend);
+            this.Controls.Add(this.textBoxMessage);
+            this.Controls.Add(this.textBoxEmpfänger);
+            this.Controls.Add(this.textBoxSender);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.monoFlat_Panel1);
             this.Controls.Add(this.metroTabControl1);
@@ -274,6 +346,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -295,5 +368,12 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.TextBox textBoxSender;
+        private System.Windows.Forms.TextBox textBoxEmpfänger;
+        private System.Windows.Forms.TextBox textBoxMessage;
+        private System.Windows.Forms.Button buttonSend;
+        private System.Windows.Forms.Label labelSender;
+        private System.Windows.Forms.Label labelEmpfänger;
+        private System.Windows.Forms.Label labelMessage;
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace Datenbank
 {
@@ -26,6 +27,11 @@ namespace Datenbank
             Bitmap bmp = new Bitmap(Original,Width,Height);
             Original = bmp;
             return Original;
+        }
+
+        public static Panel ChatPanel()
+        {
+            return null;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +13,21 @@ namespace Datenbank
 {
     public partial class Chats : Form
     {
+        string ConnectionString;
+        MySqlConnection sqlConnection;
+
         List<string> ListChats = new List<string>();
         public Chats()
         {
             InitializeComponent();
+            ConnectionString = "Database =upChat; Server =cytexal.com; Uid =ITA; Password =Hansel987; pooling = false; CharSet = utf8; port = 3306";
+            sqlConnection = new MySqlConnection(ConnectionString);
             // Get values into ListChats
-            foreach (string s in ListChats)
-            {
-                Panel P = new Panel();
-                P.Size = new Size(100,20);
+        }
 
-            }
+        private void buttonSend_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
