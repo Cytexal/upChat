@@ -333,6 +333,7 @@
             this.Controls.Add(this.metroTabControl1);
             this.Name = "Chats";
             this.Text = "Chats";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Chats_FormClosing);
             this.metroTabControl1.ResumeLayout(false);
             this.monoFlat_Panel1.ResumeLayout(false);
             this.monoFlat_Panel1.PerformLayout();

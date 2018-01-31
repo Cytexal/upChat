@@ -160,5 +160,12 @@ namespace Datenbank
             reg.Show();
             this.Hide();
         }
+
+        private void buttonSchnellLogin_Click(object sender, EventArgs e)
+        {
+            TextBox_Mail.Text = "@admin";
+            TextBox_Passwort.Text = "admin";
+            Button_Anmeldung_Click(sender, e);
+        }
     }
 }

@@ -22,12 +22,18 @@ namespace Datenbank
             InitializeComponent();
             ConnectionString = "Database =upChat; Server =cytexal.com; Uid =ITA; Password =Hansel987; pooling = false; CharSet = utf8; port = 3306";
             sqlConnection = new MySqlConnection(ConnectionString);
+            sqlConnection.Open();
             // Get values into ListChats
         }
 
         private void buttonSend_Click(object sender, EventArgs e)
         {
+            MySQLCommands.MySQLInsertCommmand(sqlConnection, "insert into Nachrichten (`SenderID`,`EmpfängerID`,`Nachricht`,`Zeit`) values ('" + textBoxSender.Text + "','" + textBoxEmpfänger.Text + "','" + textBoxMessage.Text + "','" + System.DateTime.Now.ToShortTimeString() + "')");
+        }
 
+        private void Chats_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            sqlConnection.Close();
         }
     }
 }

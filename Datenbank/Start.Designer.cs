@@ -41,6 +41,7 @@
             this.ProfileImage = new System.Windows.Forms.OpenFileDialog();
             this.pictureBoxProfilePic = new System.Windows.Forms.PictureBox();
             this.LabelRegistration = new MonoFlat.Class1.MonoFlat_Label();
+            this.buttonSchnellLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,9 +53,9 @@
             this.UpChat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.UpChat.Location = new System.Drawing.Point(144, 20);
             this.UpChat.Name = "UpChat";
-            this.UpChat.Size = new System.Drawing.Size(110, 50);
+            this.UpChat.Size = new System.Drawing.Size(109, 50);
             this.UpChat.TabIndex = 2;
-            this.UpChat.Text = "LogIn";
+            this.UpChat.Text = "Login";
             // 
             // TextBox_Mail
             // 
@@ -267,6 +268,16 @@
             this.LabelRegistration.Text = "Registrieren?";
             this.LabelRegistration.Click += new System.EventHandler(this.LabelRegistration_Click);
             // 
+            // buttonSchnellLogin
+            // 
+            this.buttonSchnellLogin.Location = new System.Drawing.Point(153, 430);
+            this.buttonSchnellLogin.Name = "buttonSchnellLogin";
+            this.buttonSchnellLogin.Size = new System.Drawing.Size(101, 23);
+            this.buttonSchnellLogin.TabIndex = 16;
+            this.buttonSchnellLogin.Text = "Schnell-Login";
+            this.buttonSchnellLogin.UseVisualStyleBackColor = true;
+            this.buttonSchnellLogin.Click += new System.EventHandler(this.buttonSchnellLogin_Click);
+            // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,6 +285,7 @@
             this.BackgroundImage = global::Datenbank.Properties.Resources.thumb_1920_536245;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(403, 591);
+            this.Controls.Add(this.buttonSchnellLogin);
             this.Controls.Add(this.LabelRegistration);
             this.Controls.Add(this.pictureBoxProfilePic);
             this.Controls.Add(this.LabelApply);
@@ -311,6 +323,7 @@
         private System.Windows.Forms.OpenFileDialog ProfileImage;
         private System.Windows.Forms.PictureBox pictureBoxProfilePic;
         private MonoFlat.Class1.MonoFlat_Label LabelRegistration;
+        private System.Windows.Forms.Button buttonSchnellLogin;
     }
 }
 
