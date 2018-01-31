@@ -13,9 +13,9 @@ namespace Datenbank
 {
     class MySQLCommands
     {
-        public static string MySQLSelectCommmand(MySqlConnection connection,String Befehl)
+        public static string MySQLSelectCommmand(String Befehl)
         {
-            MySqlCommand command = connection.CreateCommand();
+            MySqlCommand command = Variablen.connection.CreateCommand();
             command.CommandText = Befehl;
             MySqlDataReader Reader;
 
@@ -27,16 +27,16 @@ namespace Datenbank
                 for (int i = 0; i < Reader.FieldCount; i++)
                     row += Reader.GetValue(i).ToString() + ";";
             }
-            connection.Close();
+            Variablen.connection.Close();
             OpenConnection();
             return row;
         }
 
-        public static string MySQLSelectCommmand(MySqlConnection connection, String Befehl, int Rückgabewert_Nummer)
+        public static string MySQLSelectCommmand(String Befehl, int Rückgabewert_Nummer)
         {
             try
             {
-                MySqlCommand command = connection.CreateCommand();
+                MySqlCommand command = Variablen.connection.CreateCommand();
                 command.CommandText = Befehl;
                 MySqlDataReader Reader;
 
@@ -44,13 +44,13 @@ namespace Datenbank
                 string row = "";
                 Reader.Read();
                 row += Reader.GetValue((Rückgabewert_Nummer - 1)).ToString();
-                connection.Close();
+                Variablen.connection.Close();
                 OpenConnection();
                 return row;
             }
             catch
             {
-                connection.Close();
+                Variablen.connection.Close();
                 OpenConnection();
                 return "";
             }
@@ -58,21 +58,21 @@ namespace Datenbank
         }
 
 
-        public static void MySQLInsertCommmand(MySqlConnection connection, String Befehl)
+        public static void MySQLInsertCommmand(String Befehl)
         {
             string myInsertQuery = Befehl;
             MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
-            myCommand.Connection = connection;
+            myCommand.Connection = Variablen.connection;
             myCommand.ExecuteNonQuery();
-            connection.Close();
+            Variablen.connection.Close();
             OpenConnection();
         }
 
         public static void OpenConnection()
         {
-            ((Start)Application.OpenForms[0]).Connection = new MySqlConnection();
-            ((Start)Application.OpenForms[0]).Connection.ConnectionString = ((Start)Application.OpenForms[0]).Cs;
-            ((Start)Application.OpenForms[0]).Connection.Open();
+            Variablen.connection = new MySqlConnection();
+            Variablen.connection.ConnectionString = Variablen.cs;
+            Variablen.connection.Open();
         }
     }
 }

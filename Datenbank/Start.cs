@@ -32,15 +32,17 @@ namespace Datenbank
         {
             InitializeComponent();
             cs = "Database = " + db + "; Server = " + serverName + "; Uid = " + userID + "; Password = " + password + "; pooling = false; CharSet = utf8; port = 3306";
-            Connection = new MySqlConnection();
-            Connection.ConnectionString = cs;
-            Connection.Open();
+            Variablen.connection = new MySqlConnection();
+            Variablen.cs = cs;
+            Variablen.connection.ConnectionString = cs;
+            Variablen.connection.Open();
+            this.connection = Variablen.connection;
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(MySQLCommands.MySQLSelectCommmand(Connection, "select * from Anmeldeinformationen"));
+            MessageBox.Show(MySQLCommands.MySQLSelectCommmand("select * from Anmeldeinformationen"));
         }
 
         private void Start_FormClosing(object sender, FormClosingEventArgs e)
@@ -51,7 +53,7 @@ namespace Datenbank
         private void button2_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            MySQLCommands.MySQLInsertCommmand(Connection, "INSERT INTO Test (Test) Values('Hallo"+rnd.Next(100)+"')");
+            MySQLCommands.MySQLInsertCommmand("INSERT INTO Test (Test) Values('Hallo"+rnd.Next(100)+"')");
         }
 
         private void Button_Anmeldung_Click(object sender, EventArgs e)
@@ -71,7 +73,7 @@ namespace Datenbank
             if (TextBox_Passwort.Text != "" && TextBox_Mail.Text != "")
             {
                 {
-                    if (MySQLCommands.MySQLSelectCommmand(Connection, "SELECT ID FROM `Anmeldeinformationen` WHERE EMail like '" + TextBox_Mail.Text + "' AND Passwort like '" + TextBox_Passwort.Text + "'", 1) == "")
+                    if (MySQLCommands.MySQLSelectCommmand("SELECT ID FROM `Anmeldeinformationen` WHERE EMail like '" + TextBox_Mail.Text + "' AND Passwort like '" + TextBox_Passwort.Text + "'", 1) == "")
                     {
                         TextBox_Passwort.Text = "";
                         label1.Show();
@@ -80,7 +82,7 @@ namespace Datenbank
                     {
                         
                         label1.Hide();
-                        Variablen.ID = MySQLCommands.MySQLSelectCommmand(Connection, "SELECT ID FROM `Anmeldeinformationen` WHERE EMail like '" + TextBox_Mail.Text + "' AND Passwort like '" + TextBox_Passwort.Text + "'", 1);
+                        Variablen.ID = MySQLCommands.MySQLSelectCommmand("SELECT ID FROM `Anmeldeinformationen` WHERE EMail like '" + TextBox_Mail.Text + "' AND Passwort like '" + TextBox_Passwort.Text + "'", 1);
                         TextBox_Passwort.Text = "";
                         TextBox_Mail.Text = "";
 
@@ -93,18 +95,18 @@ namespace Datenbank
                         t.add(Label_Passwort, "Left", -500);
                         t.add(Button_Anmeldung, "Left", -500);
                         t.add(label1, "Left", -500);
-                        if (MySQLCommands.MySQLSelectCommmand(Connection, "SELECT Anzeigename FROM `Profile` WHERE ID like '" + Variablen.ID + "'", 1) == "")
+                        if (MySQLCommands.MySQLSelectCommmand("SELECT Anzeigename FROM `Profile` WHERE ID like '" + Variablen.ID + "'", 1) == "")
                         {
                             t.add(TextBox_Name, "Left", TextBox_Name.Location.X - 661);
                             t.add(Label_Name, "Left", Label_Name.Location.X - 661);
                             t.add(pictureBoxProfilePic, "Left", pictureBoxProfilePic.Location.X - 661);
                             t.add(LabelApply, "Left", LabelApply.Location.X - 661);
-                            MySQLCommands.MySQLInsertCommmand(Connection, "UPDATE `Anmeldeinformationen` SET `Letzter_Login`='" + System.DateTime.Now.ToShortTimeString() + "' WHERE `ID`='" + Variablen.ID + "'");
+                            MySQLCommands.MySQLInsertCommmand("UPDATE `Anmeldeinformationen` SET `Letzter_Login`='" + System.DateTime.Now.ToShortTimeString() + "' WHERE `ID`='" + Variablen.ID + "'");
 
                         }
                         else
                         {
-                            MySQLCommands.MySQLInsertCommmand(Connection, "UPDATE `Anmeldeinformationen` SET `Letzter_Login`='" + System.DateTime.Now.ToShortTimeString() + "' WHERE `ID`='" + Variablen.ID + "'");
+                            MySQLCommands.MySQLInsertCommmand("UPDATE `Anmeldeinformationen` SET `Letzter_Login`='" + System.DateTime.Now.ToShortTimeString() + "' WHERE `ID`='" + Variablen.ID + "'");
 
                             GoToChats();
                         }
@@ -129,15 +131,14 @@ namespace Datenbank
             {
                 Label_Name.ForeColor = Color.White;
                 byte[] imagebytes = imageToByteArray(pictureBoxProfilePic.Image);
-                String imagebyteString = "";
-                foreach (byte b in imagebytes)
-                {
-                    imagebyteString += b.ToString();
-                }
-                MySQLCommands.MySQLInsertCommmand(Connection, "INSERT INTO `Profile`(`ID`, `Anzeigename`, `Status`,`Profilbild`) VALUES ('"+Variablen.ID+"','"+TextBox_Name.Text+"','Hallo ich benutzte UpChat','"+imagebyteString+"')");
+                String imagebyteString = Encoding.UTF8.GetString(imagebytes);
+                MySQLCommands.MySQLInsertCommmand("INSERT INTO `Profile`(`ID`, `Anzeigename`, `Status`) VALUES ('"+Variablen.ID+"','"+TextBox_Name.Text+"','Hallo ich benutzte UpChat')");
             }
             GoToChats();
         }
+
+
+
 
         public byte[] imageToByteArray(System.Drawing.Image imageIn)
         {
@@ -145,6 +146,12 @@ namespace Datenbank
             imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             return ms.ToArray();
         }
+
+
+
+
+
+
 
         private void pictureBoxProfilePic_Click(object sender, EventArgs e)
         {

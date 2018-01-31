@@ -9,5 +9,7 @@ namespace Datenbank
     public static class Variablen
     {
         public static String ID;
+        public static MySql.Data.MySqlClient.MySqlConnection connection;
+        internal static string cs;
     }
 }
